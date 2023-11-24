@@ -1,0 +1,90 @@
+// colors
+$color-dark: #403F3D;
+$color-light: #E1D4C9;
+$color-accent: #B0907A;
+
+// breakpoints
+$width-small-mobile: 380px;
+$width-mobile: 768px;
+$width-tablet: 1024px;
+$width-pre-tablet: 1200px;
+$width-laptop: 1440px;
+
+@mixin small-mobile {
+  @media (max-width: $width-small-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $width-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $width-tablet) {
+    @content;
+  }
+}
+
+@mixin pre-tablet {
+  @media (max-width: $width-pre-tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $width-laptop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $width-tablet) {
+    @content;
+  }
+}
+
+// fonts
+$font-family-inter: 'Inter', sans-serif;
+
+$font-title: 600 72px/1.05 $font-family-inter;
+$font-main: 400 16px/1.5 $font-family-inter;
+
+@mixin font-h1 {
+  font: 600 72px/1.05 $font-family-inter;
+
+  @include tablet {
+    // font-size: ;
+  }
+
+  @include mobile {
+    // font-size: ;
+  }
+}
+
+@mixin font-h2 {
+  font: 600 60px/1.25 $font-family-inter;
+
+  @include tablet {
+    // font-size: ;
+  }
+
+  @include mobile {
+    // font-size: ;
+  }
+}
+
+@mixin font-h3 {
+  font: 600 24px/1.25 $font-family-inter;
+
+  @include tablet {
+    // font-size: ;
+  }
+
+  @include mobile {
+    // font-size: ;
+  }
+}
+
