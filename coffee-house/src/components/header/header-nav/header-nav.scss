@@ -11,26 +11,8 @@
 
   &-item {
     a {
-      position: relative;
       font: $font-main-bold;
       color: $color-dark;
-
-      &:after {
-        position: absolute;
-        display: block;
-        content: '';
-        bottom: -4px;
-        height: 2px;
-        width: 0px;
-        background-color: $color-dark;
-        transition: width 0.2s ease-out;
-      }
-
-      &:hover {
-        &:after {
-          width: 100%;
-        }
-      }
     }
   }
 }
