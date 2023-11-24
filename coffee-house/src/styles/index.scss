@@ -8,11 +8,12 @@ body {
 }
 
 body {
-  font: $font-main;
-  color: $color-dark;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  font: $font-main;
+  color: $color-dark;
+  background-color: $color-light;
 
   &.hidden {
     overflow: hidden;
