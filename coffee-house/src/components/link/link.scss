@@ -10,14 +10,22 @@
       content: '';
       bottom: -4px;
       height: 2px;
-      width: 0px;
       background-color: $color-dark;
-      transition: width 0.2s ease-out;
+      transition: width 0.2s linear;
     }
 
     &:hover {
       &:after {
         width: 100%;
+      }
+    }
+
+    &:not(:hover) {
+      &:after {
+        width: 0%;
+        left: 100%;
+        transform: scaleX(-1);
+        transform-origin: left;
       }
     }
   }
