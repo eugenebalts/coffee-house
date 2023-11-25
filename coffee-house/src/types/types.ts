@@ -3,4 +3,8 @@ interface INavigationItems {
   href: string;
 }
 
-export { INavigationItems };
+interface IFooterContacts extends INavigationItems {
+  type: string;
+}
+
+export { INavigationItems, IFooterContacts };

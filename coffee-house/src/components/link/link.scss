@@ -3,6 +3,27 @@
 .link {
   &--inline {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: fit-content;
+    width: fit-content;
+
+    &_dark {
+      color: $color-dark;
+
+      &:after {
+        background-color: $color-dark;
+      }
+    }
+
+    &_light {
+      color: $color-light;
+
+      &:after {
+        background-color: $color-light;
+      }
+    }
 
     &:after {
       position: absolute;
@@ -10,7 +31,6 @@
       content: '';
       bottom: -4px;
       height: 2px;
-      background-color: $color-dark;
       transition: width 0.2s linear;
     }
 
@@ -28,5 +48,22 @@
         transform-origin: left;
       }
     }
+  }
+
+  &--button {
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 100px;
+    transition: background-color 0.3s linear;
+
+    &_dark {
+      border-color: $color-dark;
+    }
+
+    &_light {
+      border-color: $color-light;
+    }
+    
   }
 }

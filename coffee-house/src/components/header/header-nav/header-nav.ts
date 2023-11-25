@@ -32,7 +32,7 @@ export default class HeaderNav extends BaseComponent<'nav'> {
 
     const itemLink: HTMLAnchorElement = new Link(
       item.title,
-      ['header__link', 'link--inline'],
+      ['header__link', 'link--inline', 'link--inline_dark'],
       item.href
     ).getNode();
 

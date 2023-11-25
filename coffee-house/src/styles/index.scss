@@ -10,6 +10,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  padding: 20px 0 40px;
   overflow-x: hidden;
   font: $font-main;
   color: $color-dark;

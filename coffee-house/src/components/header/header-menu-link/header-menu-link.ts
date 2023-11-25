@@ -4,7 +4,16 @@ import './header-menu-link.scss';
 
 export default class HeaderMenuLink extends Link {
   constructor() {
-    super('', ['header__menu-link', 'link--inline', 'header__link'], '/');
+    super(
+      '',
+      [
+        'header__menu-link',
+        'link--inline',
+        'link--inline_dark',
+        'header__link',
+      ],
+      '/'
+    );
 
     this.node.append(this.createMenuLinkTitle(), this.createMenuLinkLogo());
   }
