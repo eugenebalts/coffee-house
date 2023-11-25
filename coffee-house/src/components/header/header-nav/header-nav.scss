@@ -8,11 +8,4 @@
     display: flex;
     gap: 40px;
   }
-
-  &-item {
-    a {
-      font: $font-main-bold;
-      color: $color-dark;
-    }
-  }
 }

@@ -1,6 +1,14 @@
+@import '../../styles/base/variables';
+
 .header {
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+      font: $font-main-bold;
+      color: $color-dark;
   }
 }

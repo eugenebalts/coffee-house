@@ -1,0 +1,15 @@
+.header__menu-link {
+  display: flex;
+  height: fit-content;
+  gap: 8px;
+
+  &-title {
+
+  }
+
+  &-logo {
+    width: 20px;
+    height: 20px;
+    background: url('../../../assets/icons/coffee-cup.svg') center/cover;
+  }
+}
