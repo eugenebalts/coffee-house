@@ -2,6 +2,7 @@ import BaseComponent from '../../../components/base-component';
 import Link from '../../../components/link/link';
 import MenuLogo from '../../../components/menu-logo/menu-logo';
 import './section-hero.scss';
+import '../../pages.scss';
 
 export default class SectionHero extends BaseComponent<'section'> {
   constructor() {
@@ -36,6 +37,7 @@ export default class SectionHero extends BaseComponent<'section'> {
   private createSectionTitle() {
     const sectionTitle = new BaseComponent('h1', [
       'section__title',
+      'section__title_h1',
       'section__title_light',
     ]).getNode();
     sectionTitle.innerHTML = `<i>Enjoy</i> premium coffee at our charming cafe`;

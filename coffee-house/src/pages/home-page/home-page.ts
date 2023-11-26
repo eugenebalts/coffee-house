@@ -1,13 +1,24 @@
 import BaseComponent from '../../components/base-component';
 import SectionHero from './section-hero/section-hero';
 import './home-page.scss';
+import '../pages.scss';
+import SectionFavorite from './section-favorite/section-favorite';
 
 export default class HomePage extends BaseComponent<'div'> {
   constructor() {
-    super('div', ['container', 'main__container']);
+    super('div', ['container']);
+
+    this.node.append(this.createMarkup());
+  }
+
+  private createMarkup() {
+    const wrapper = new BaseComponent('div', ['main__wrapper']).getNode();
 
     const sectionHero = new SectionHero().getNode();
+    const sectionFavorite = new SectionFavorite().getNode();
 
-    this.node.append(sectionHero);
+    wrapper.append(sectionHero, sectionFavorite);
+
+    return wrapper;
   }
 }
