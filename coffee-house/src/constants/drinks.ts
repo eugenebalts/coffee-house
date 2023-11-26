@@ -7,14 +7,14 @@ const FAVORITE_DRINKS: IDrink[] = [
       it with brown sugar and cinnamon before being topped with
       oat milk.`,
     price: 5.5,
-    pathToImg: 'coffee2',
+    pathToImg: 'coffee',
   },
   {
     name: 'Caramel Macchiato',
     description: `Fragrant and unique classic espresso with rich
       caramel-peanut syrup, with cream under whipped thick foam.`,
     price: 5.0,
-    pathToImg: 'coffee',
+    pathToImg: 'coffee2',
   },
   {
     name: 'Ice coffee',
