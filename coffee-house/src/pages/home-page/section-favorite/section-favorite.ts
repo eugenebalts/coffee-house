@@ -28,7 +28,7 @@ export default class SectionFavorite extends BaseComponent<'section'> {
   private createSectionTitle() {
     const sectionTitle = new BaseComponent('h2', [
       'section__title',
-      'section__title_h2',
+      'section__title-h2',
       'section__title_dark',
     ]).getNode();
 

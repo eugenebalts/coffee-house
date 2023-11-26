@@ -16,11 +16,11 @@
   }
 
   &__title {
-    &_h1 {
+    &-h1 {
       @include font-h1;
     }
     
-    &_h2 {
+    &-h2 {
       @include font-h2;
     }
 

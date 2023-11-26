@@ -34,4 +34,9 @@ main {
 .container {
   max-width: 95%;
   margin: 0 auto;
+  overflow-x: hidden;
+
+  @media (width >= 1440px) {
+    max-width: 1360px;
+  }
 }
