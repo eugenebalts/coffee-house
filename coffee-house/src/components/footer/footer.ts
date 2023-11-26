@@ -1,6 +1,6 @@
 import BaseComponent from '../base-component';
 import Link from '../link/link';
-import CONTACTS from './contacts';
+import CONTACTS from './CONTACTS';
 import './footer.scss';
 import SOCIAL_MEDIA_DATA from './social-medias/SOCIAL-MEDIA-DATA';
 

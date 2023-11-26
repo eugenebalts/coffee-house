@@ -51,7 +51,12 @@
   }
 
   &--button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font: $font-main-bold;
+    width: fit-content;
     border-width: 1px;
     border-style: solid;
     border-radius: 100px;
@@ -59,10 +64,18 @@
 
     &_dark {
       border-color: $color-dark;
+
+      &-filled {
+        background-color: $color-dark;
+      }
     }
 
     &_light {
       border-color: $color-light;
+
+      &-filled {
+        background-color: $color-light;
+      }
     }
     
   }

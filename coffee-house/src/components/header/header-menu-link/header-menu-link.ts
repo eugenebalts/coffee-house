@@ -1,5 +1,6 @@
 import BaseComponent from '../../base-component';
 import Link from '../../link/link';
+import MenuLogo from '../../menu-logo/menu-logo';
 import './header-menu-link.scss';
 
 export default class HeaderMenuLink extends Link {
@@ -12,10 +13,10 @@ export default class HeaderMenuLink extends Link {
         'link--inline_dark',
         'header__link',
       ],
-      '/'
+      '/menu'
     );
 
-    this.node.append(this.createMenuLinkTitle(), this.createMenuLinkLogo());
+    this.node.append(this.createMenuLinkTitle(), new MenuLogo().getNode());
   }
 
   private createMenuLinkTitle() {
@@ -24,9 +25,5 @@ export default class HeaderMenuLink extends Link {
       ['header__menu-link-title'],
       'Menu'
     ).getNode();
-  }
-
-  private createMenuLinkLogo() {
-    return new BaseComponent('div', ['header__menu-link-logo']).getNode();
   }
 }

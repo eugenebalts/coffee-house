@@ -1,0 +1,47 @@
+@import '../../styles/base/variables';
+
+.section {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    @include font-h1;
+
+    i {
+      color: $color-accent;
+    }
+
+    &_dark {
+      color: $color-dark;
+    }
+
+    &_light {
+      color: $color-light;
+    }
+  }
+
+  &__subtitle {
+    font: $font-main;
+
+    &_dark {
+      color: $color-dark;
+    }
+
+    &_light {
+      color: $color-light;
+    }
+  }
+
+  &__button {
+    &_light {
+
+    }
+
+    &_dark {
+      
+    }
+  }
+}
