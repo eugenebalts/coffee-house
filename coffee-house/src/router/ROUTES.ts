@@ -4,17 +4,17 @@ import { AppRoute, AppRoutesPath } from './types';
 
 export const HOME_ROUTE: AppRoute = {
   path: AppRoutesPath.HOME,
-  component: () => new HomePage().getNode(),
+  component: () => HomePage,
 };
 
 export const MENU_ROUTE: AppRoute = {
   path: AppRoutesPath.MENU,
-  component: () => new MenuPage().getNode(),
+  component: () => MenuPage,
 };
 
 export const NOT_FOUND_ROUTE: AppRoute = {
   path: AppRoutesPath.NOT_FOUND,
-  component: () => new HomePage().getNode(),
+  component: () => HomePage,
 };
 
 export const ROUTES: AppRoute[] = [HOME_ROUTE, MENU_ROUTE, NOT_FOUND_ROUTE];

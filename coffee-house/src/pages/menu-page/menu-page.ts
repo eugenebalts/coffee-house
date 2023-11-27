@@ -1,6 +1,6 @@
 import BaseComponent from '../../components/base-component';
 
-export default class MenuPage extends BaseComponent<'div'> {
+class MenuPage extends BaseComponent<'div'> {
   constructor() {
     super('div', ['container']);
 
@@ -15,3 +15,5 @@ export default class MenuPage extends BaseComponent<'div'> {
     return wrapper;
   }
 }
+
+export default new MenuPage().getNode();

@@ -6,7 +6,7 @@ import SectionFavorite from './section-favorite/section-favorite';
 import SectionAbout from './section-about/section-about';
 import SectionApp from './section-application/section-app';
 
-export default class HomePage extends BaseComponent<'div'> {
+class HomePage extends BaseComponent<'div'> {
   constructor() {
     super('div', ['container']);
 
@@ -26,3 +26,5 @@ export default class HomePage extends BaseComponent<'div'> {
     return wrapper;
   }
 }
+
+export default new HomePage().getNode();

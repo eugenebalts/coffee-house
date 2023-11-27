@@ -16,9 +16,10 @@ export default class Router {
   }
 
   private onHashChangeHandler() {
-    const pathname: string[] = location.pathname.split('/').slice(1);
+    const hash = window.location.hash.split('/');
+    const pathname = [hash[0].slice(1), ...hash.slice(1)];
 
-    console.log(window.location);
+    console.log(pathname);
 
     const matchedRoute: AppRoute | undefined = this.routes.find((route) => {
       const routePathSegments: string[] = route.path.split('/').slice(1);

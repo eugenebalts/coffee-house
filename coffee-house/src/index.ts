@@ -6,16 +6,12 @@ import HomePage from './pages/home-page/home-page';
 import Router from './router/router';
 
 class App {
-  private initialPage: HTMLElement;
-  constructor() {
-    this.initialPage = new HomePage().getNode();
-  }
+  constructor() {}
   public start() {
     console.log('Application has been started');
 
     const header = new Header().getNode();
     const main = document.createElement('main');
-    main.append(this.initialPage);
     const footer = new Footer().getNode();
 
     document.body.append(header, main, footer);

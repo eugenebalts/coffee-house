@@ -1,7 +1,9 @@
+import getHref from '../../page-href';
 import BaseComponent from '../base-component';
 import './link.scss';
 
 export default class Link extends BaseComponent<'a'> {
+  private readonly pageHref: string = getHref();
   constructor(text: string, classNames: string[] = [], href: string) {
     super('a', ['link', ...classNames], text);
     this.node.href = href;
@@ -22,16 +24,21 @@ export default class Link extends BaseComponent<'a'> {
   }
 
   private changeUrlEvent(href: string): void {
-    const currentHref = window.location.href;
-    window.history.pushState({}, '', currentHref + href);
-    console.log('changes');
+    let hash = `#${href.slice(1)}`;
+
+    if (hash.length == 1) hash = '';
+
+    window.history.pushState({}, '', this.pageHref + hash);
     const changeURL = new CustomEvent('changeURL', { bubbles: true });
     window.dispatchEvent(changeURL);
   }
 
   private handleAnchorLink(href: string): void {
-    const hash = href.split('/')[1];
+    window.history.pushState({}, '', this.pageHref);
+    const changeURL = new CustomEvent('changeURL', { bubbles: true });
+    window.dispatchEvent(changeURL);
 
+    const hash = href.split('/')[1];
     const navigateToElement = document.body.querySelector(`${hash}`);
 
     if (navigateToElement) {
