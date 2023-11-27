@@ -6,6 +6,7 @@ export default class SectionAbout extends BaseComponent<'section'> {
     super('section', ['main__section', 'section_about']);
 
     this.node.append(this.createMarkup());
+    this.node.id = 'section_about';
   }
 
   private createMarkup() {
