@@ -16,10 +16,11 @@
     align-items:stretch;
     flex-wrap: wrap;
     width: 100%;
-    height: calc(660px + 40px + 430px);
-    gap: 40px;
+    aspect-ratio: 1360/1130;
+    gap: 3%;
 
     &-item {
+      width: 48.5%;
       position: relative;
       border-radius: 20px;
       transition: background-size 0.3s linear;
@@ -47,12 +48,10 @@
       }
 
       &:nth-child(1), &:nth-child(4) {
-        height: 660px;
         aspect-ratio: 1;
       }
 
       &:nth-child(2), &:nth-child(3) {
-        height: 430px;
         aspect-ratio: 660/430;
       }
 
