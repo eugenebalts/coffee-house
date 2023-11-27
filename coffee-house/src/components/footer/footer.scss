@@ -8,7 +8,7 @@
     display: flex;
     padding: 100px;
     background-color: $color-khaki;
-    gap: 100px;
+    gap: 137px;
     border-radius: 40px;
   }
 
@@ -18,10 +18,6 @@
     i {
       color: $color-accent;
     }
-  }
-
-  &__subtitle {
-    @include font-h3;
   }
 
   &__social {
@@ -39,7 +35,7 @@
     &-link {
       width: 60px;
       height: 60px;
-      background-size: 20px;
+      background-size: 24px;
       background-position: center;
       background-repeat: no-repeat;
       transition: background-color 0.3s linear;
@@ -74,21 +70,6 @@
       }
     }
   }
-  
-  @keyframes background-size-out {
-    0% {
-      background-size: 20px;
-      
-    }
-
-    50% {
-      background-size: 5px;
-    }
-
-    100% {
-      background-size: 20px;
-    }
-  }
 
   &__contacts {
     &-wrapper {
@@ -96,6 +77,14 @@
       flex-direction: column;
       justify-content: center;
       gap: 40px;
+    }
+
+    &-title {
+      @include font-h3;
+    }
+
+    &-subtitle {
+      font: $font-main-bold;
     }
 
     &-list {
@@ -109,18 +98,39 @@
       height: 20px;
       background-position: center;
       background-size: cover;
+
+      &_location {
+        background-image: url('../../assets/icons/location-icon.svg');
+      }
+    
+      &_time {
+        background-image: url('../../assets/icons/clock-icon.svg');
+      }
+    
+      &_phone {
+        background-image: url('../../assets/icons/phone-icon.svg');
+      }
     }
   }
 
-  &__location-icon {
-    background-image: url('../../assets/icons/location-icon.svg');
+  &__link:not(a) {
+      &:after {
+        display: none;
+      }
+  }
+}
+
+@keyframes background-size-out {
+  0% {
+    background-size: 24px;
+    
   }
 
-  &__time-icon {
-    background-image: url('../../assets/icons/clock-icon.svg');
+  50% {
+    background-size: 15px;
   }
 
-  &__phone-icon {
-    background-image: url('../../assets/icons/phone-icon.svg');
+  100% {
+    background-size: 24px;
   }
 }

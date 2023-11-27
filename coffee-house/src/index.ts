@@ -1,9 +1,7 @@
 import Header from './components/header/header';
 import '../src/styles/index.scss';
 import Footer from './components/footer/footer';
-import router, { createRouter } from './router/router';
-import HomePage from './pages/home-page/home-page';
-import Router from './router/router';
+import { createRouter } from './router/router';
 
 class App {
   constructor() {}
@@ -21,3 +19,33 @@ class App {
 }
 
 new App().start();
+
+console.log(`
+Самостоятельная оценка:\n
+- Валидация +18\n
+- Планировка +40\n
+- Требования стилей +10\n
+- Интерактивность +32 \n
+
+ИТОГО: 100 баллов. \n
+
+PS* Есть малюсенькие отклонения, но они точно меньше 10px. 
+Интерактивность местами у меня своя, что не запрещено по ТЗ. В макете был
+исключительно пример итерактивности!
+
+ВАЖНО!!!
+
+Так как гитхаб имеет свои настройки сервера,
+он ищет фактические URL пути. Поэтому переход на
+другую страницу реализовывается через #. 
+
+Как делать НЕ надо: ...coffe-house/dist/menu
+Как делать надо: ...coffe-house/dist/#menu - ставим хеш #
+
+При введении неверного адреса, страница вернется на home-page.
+В будущем планирую сделать страницу 404.
+
+Итог: SPA приложение, написанное полностью на TypeScript,
+пока не оживленное, но все к этому подготовлено. Справился за 3 дня! :))
+
+`);

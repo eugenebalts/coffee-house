@@ -63,9 +63,9 @@ export default class SectionApp extends BaseComponent<'section'> {
   }
 
   private createAppStoreBtn() {
-    const button = new Link(
-      '',
-      ['link--button', 'link--button_dark', 'section_app__button'],
+    const button = new BaseComponent(
+      'button',
+      ['link', 'link--button', 'link--button_dark', 'section_app__button'],
       ''
     ).getNode();
 
@@ -86,17 +86,18 @@ export default class SectionApp extends BaseComponent<'section'> {
   }
 
   private createGoogleMarketBtn() {
-    const button = new Link(
-      '',
-      ['link--button', 'link--button_dark', 'section_app__button'],
-      ''
-    ).getNode();
+    const button = new BaseComponent('button', [
+      'link',
+      'link--button',
+      'link--button_dark',
+      'section_app__button',
+    ]).getNode();
 
     const buttonTitle = new BaseComponent('p', [
       'section_app__button-title',
     ]).getNode();
 
-    buttonTitle.innerHTML = 'Available on <br><b>Google Market</b>';
+    buttonTitle.innerHTML = 'Available on <br><b>Google Play</b>';
 
     const buttonIcon = new BaseComponent('div', [
       'section_app__button-icon',

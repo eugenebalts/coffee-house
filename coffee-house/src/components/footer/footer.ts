@@ -70,7 +70,7 @@ export default class Footer extends BaseComponent<'footer'> {
 
     const contactsTitle = new BaseComponent(
       'h3',
-      ['footer__subtitle'],
+      ['footer__contacts-title'],
       'Contact us'
     ).getNode();
 
@@ -91,12 +91,12 @@ export default class Footer extends BaseComponent<'footer'> {
 
       const contactItemTitle = new BaseComponent(
         'p',
-        [`footer__${contact.type}-title`],
+        [`footer__contacts-subtitle`],
         `${contact.title}`
       ).getNode();
 
       const contactItemIcon = new BaseComponent('div', [
-        `footer__${contact.type}-icon`,
+        `footer__contacts-icon_${contact.type}`,
         'footer__contacts-icon',
       ]).getNode();
 
@@ -104,6 +104,29 @@ export default class Footer extends BaseComponent<'footer'> {
       contactItem.append(contactItemLink);
       contactsList.append(contactItem);
     }
+
+    const contactsTime = new BaseComponent('button', [
+      'footer__link',
+      'link--inline',
+      'link--inline_light',
+      'link',
+    ]).getNode();
+
+    const contactsTimeTitle = new BaseComponent(
+      'p',
+      ['footer__contacts-subtitle'],
+      'Mon-Sat: 9:00 AM - 23:00 PM'
+    ).getNode();
+
+    const contactsTimeIcon = new BaseComponent('div', [
+      `footer__contacts-icon_time`,
+      'footer__contacts-icon',
+    ]).getNode();
+
+    contactsTime.append(contactsTimeIcon, contactsTimeTitle);
+
+    contactsList.append(contactsTime);
+
     contactsWrapper.append(contactsTitle, contactsList);
 
     return contactsWrapper;

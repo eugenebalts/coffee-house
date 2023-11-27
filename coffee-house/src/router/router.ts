@@ -1,4 +1,5 @@
 import headerMenuLink from '../components/header/header-menu-link/header-menu-link';
+import getHref from '../page-href';
 import { NOT_FOUND_ROUTE, ROUTES } from './routes';
 import { AppRoute } from './types';
 
@@ -19,8 +20,6 @@ export default class Router {
   private onHashChangeHandler() {
     const hash = window.location.hash.split('/');
     const pathname = [hash[0].slice(1), ...hash.slice(1)];
-
-    console.log(pathname);
 
     const matchedRoute: AppRoute | undefined = this.routes.find((route) => {
       const routePathSegments: string[] = route.path.split('/').slice(1);
@@ -48,6 +47,9 @@ export default class Router {
 
     if (!matchedRoute) {
       this.onHashChange(NOT_FOUND_ROUTE);
+      window.history.pushState({}, '', getHref());
+      const changeURL = new CustomEvent('changeURL', { bubbles: true });
+      window.dispatchEvent(changeURL);
     } else {
       this.onHashChange(matchedRoute);
     }

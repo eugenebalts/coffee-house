@@ -15,13 +15,16 @@ export default class SectionMenu extends BaseComponent<'section'> {
   private createMarkup() {
     const wrapper = new BaseComponent('div', ['section__wrapper']).getNode();
 
-    const title = new BaseComponent('h1', ['section__title']).getNode();
-    title.innerHTML = `Behind each of our cups hides an <i>amazing surprise</i>`;
+    const title = new BaseComponent('h1', [
+      'section__title',
+      'section_menu__title',
+      'section__title-h2',
+    ]).getNode();
+    title.innerHTML = `Behind each of our cups <br>hides an <i>amazing surprise</i>`;
 
     const content = this.createSectionContent();
-    const menu = this.createMenu();
 
-    wrapper.append(content, menu);
+    wrapper.append(title, content);
 
     return wrapper;
   }
@@ -32,7 +35,9 @@ export default class SectionMenu extends BaseComponent<'section'> {
     ]).getNode();
 
     const pageNavigation = this.createPageNavigation();
-    const menu = content.append(pageNavigation);
+    const menu = this.createMenu();
+
+    content.append(pageNavigation, menu);
 
     return content;
   }

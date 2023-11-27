@@ -85,7 +85,7 @@ export default class Slider extends BaseComponent<'div'> {
       'slider__indicator-list',
     ]).getNode();
 
-    for (let i = 0; i <= this.slides.length; i++) {
+    for (let i = 0; i < this.slides.length; i++) {
       const indicatorItem = new BaseComponent('div', [
         'slider__indicator-item',
       ]).getNode();

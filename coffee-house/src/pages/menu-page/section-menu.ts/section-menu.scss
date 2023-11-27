@@ -1,6 +1,9 @@
 @import '../../../styles/base/variables';
 
 .section_menu {
+  &__title {
+    text-align: center;
+  }
   &__content {
     display: flex;
     align-items: center;
@@ -12,6 +15,7 @@
   &__nav {
     display: flex;
     gap: 16px;
+    justify-content: center;
 
     &-item {
       gap: 8px;
@@ -31,36 +35,25 @@
       }
 
       &__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
         width: 30px;
         aspect-ratio: 1;
         border-radius: 100%;
+        background-size: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
         background-color: #C1B6AD;
         transition: background-color 0.3s linear;
 
-        &:after {
-          display: block;
-        }
-
         &-Tea {
-          &:after {
-            content: '🥛';
-          }
+          background-image: url('../../../assets/icons/menu-tea-icon.svg');
         }
 
         &-Coffee {
-          &:after {
-            content: '☕';
-          }
+          background-image: url('../../../assets/icons/menu-coffee-icon.svg');
         }
 
         &-Dessert {
-          &:after {
-            content: '🍰';
-          }
+          background-image: url('../../../assets/icons/menu-dessert-icon.svg');
         }
       }
     }
@@ -70,14 +63,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    justify-content: center;
 
     &-item {
       min-width: 310px;
       max-width: 310px;
-
-      & {
-
-      }
     }
   }
 }

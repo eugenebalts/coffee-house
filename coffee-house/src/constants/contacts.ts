@@ -11,11 +11,11 @@ const CONTACTS: IFooterContacts[] = [
     title: '+1 (603) 555-0123',
     href: 'tel:+16035550123',
   },
-  {
-    type: 'time',
-    title: 'Mon-Sat: 9:00 AM - 23:00 PM',
-    href: 'https://maps.app.goo.gl/4Fqt1rPkPEpSDNdW8',
-  },
+  // {
+  //   type: 'time',
+  //   title: 'Mon-Sat: 9:00 AM - 23:00 PM',
+  //   href: '/',
+  // },
 ];
 
 export default CONTACTS;
