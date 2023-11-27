@@ -22,7 +22,8 @@ export default class Link extends BaseComponent<'a'> {
   }
 
   private changeUrlEvent(href: string): void {
-    window.history.pushState({}, '', href);
+    const currentHref = window.location.href;
+    window.history.pushState({}, '', currentHref + href);
     const changeURL = new CustomEvent('changeURL', { bubbles: true });
     window.dispatchEvent(changeURL);
   }
