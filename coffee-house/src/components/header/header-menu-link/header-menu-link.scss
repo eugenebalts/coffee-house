@@ -1,0 +1,12 @@
+.header__menu-link {
+  &_active {
+    &:not(:hover) {
+      &:after {
+        width: 100%;
+        left: 100%;
+        transform: scaleX(-1);
+        transform-origin: left;
+      }
+    }
+  }
+}

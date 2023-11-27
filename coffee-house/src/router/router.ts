@@ -1,3 +1,4 @@
+import headerMenuLink from '../components/header/header-menu-link/header-menu-link';
 import { NOT_FOUND_ROUTE, ROUTES } from './routes';
 import { AppRoute } from './types';
 
@@ -30,6 +31,12 @@ export default class Router {
 
       const match: boolean = routePathSegments.every(
         (routePathSegment: string, i: number): boolean => {
+          if (routePathSegment === 'menu') {
+            this.setActivePage(true);
+          } else {
+            this.setActivePage(false);
+          }
+
           return (
             routePathSegment === pathname[i] || routePathSegment[0] === ':'
           );
@@ -43,6 +50,18 @@ export default class Router {
       this.onHashChange(NOT_FOUND_ROUTE);
     } else {
       this.onHashChange(matchedRoute);
+    }
+  }
+
+  private setActivePage(inPath: boolean) {
+    const isActive = headerMenuLink.classList.contains(
+      'header__menu-link_active'
+    );
+
+    if (!inPath && isActive) {
+      headerMenuLink.classList.remove('header__menu-link_active');
+    } else if (inPath && !isActive) {
+      headerMenuLink.classList.add('header__menu-link_active');
     }
   }
 }

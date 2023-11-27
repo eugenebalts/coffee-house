@@ -1,16 +1,16 @@
 import BaseComponent from '../base-component';
-import DrinkCard from '../drink-card/drink-card';
+import MenuItemCard from '../menu-item/menu-item';
 import './slider.scss';
-import { IDrink } from '../../types/types';
+import { IMenuItem } from '../../types/types';
 
 export default class Slider extends BaseComponent<'div'> {
   navigationLeft: HTMLElement;
   navigationRight: HTMLElement;
   indicatorList: HTMLElement;
   activeSlide: number;
-  slides: IDrink[];
+  slides: IMenuItem[];
 
-  constructor(slides: IDrink[]) {
+  constructor(slides: IMenuItem[]) {
     super('div', ['slider']);
 
     this.activeSlide = 0;
@@ -49,7 +49,12 @@ export default class Slider extends BaseComponent<'div'> {
     this.slides.forEach((drink) => {
       const { name, description, price, pathToImg } = drink;
 
-      const card = new DrinkCard(name, description, price, pathToImg).getNode();
+      const card = new MenuItemCard(
+        name,
+        description,
+        price,
+        pathToImg
+      ).getNode();
 
       sliderCardsList.append(card);
     });

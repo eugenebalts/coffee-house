@@ -1,4 +1,5 @@
 import BaseComponent from '../../components/base-component';
+import SectionMenu from './section-menu.ts/section-menu';
 
 class MenuPage extends BaseComponent<'div'> {
   constructor() {
@@ -10,7 +11,9 @@ class MenuPage extends BaseComponent<'div'> {
   private createMarkup() {
     const wrapper = new BaseComponent('div', ['main__wrapper']).getNode();
 
-    wrapper.append();
+    const sectionMenu = new SectionMenu().getNode();
+
+    wrapper.append(sectionMenu);
 
     return wrapper;
   }

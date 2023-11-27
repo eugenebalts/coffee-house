@@ -1,0 +1,131 @@
+@import '../../styles/base/variables';
+
+.menu-item {
+  max-width: 100%;
+  min-width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  &_card {
+    border: 1px solid $color-dark;
+    border-radius: 40px;
+    align-items: flex-start;
+
+    .menu-item__content {
+      padding: 0 20px 20px 20px;
+      text-align: left;
+    }
+
+    .menu-item__image {
+      border-radius: 40px;
+
+      &:after {
+        transform: scale(1.1);
+      }
+
+      &:hover {
+        &:after {
+          transform: scale(1);
+        }
+      }
+
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.5s linear;
+    }
+
+    &-coffee {
+      &:after {
+        background-image: url('../../assets/images/drinks/coffee.svg');
+      }
+    }
+
+    &-coffee2 {
+      &:after {
+        background-image: url('../../assets/images/drinks/coffee2.svg');
+      }
+    }
+
+    &-coffee3 {
+      &:after {
+        background-image: url('../../assets/images/drinks/coffee3.svg');
+      }
+    }
+
+    &-cappuccino {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/cappuccino.svg');
+      }
+    }
+
+    &-cognac {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/cognac.svg');
+      }
+    }
+
+    &-espresso {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/espresso.svg');
+      }
+    }
+    &-irish {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/irish.svg');
+      }
+    }
+    &-honey {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/honey.svg');
+      }
+    }
+    &-kahlua {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/kahlua.svg');
+      }
+    }
+    &-latte {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/latte.svg');
+      }
+    }
+    &-macchiato {
+      &:after {
+        background-image: url('../../assets/images/menu/coffee/macchiato.svg');
+      }
+    }
+  }
+
+  &__title, &__price {
+    @include font-h3;
+  }
+}

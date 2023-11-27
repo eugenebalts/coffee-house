@@ -7,11 +7,16 @@ interface IFooterContacts extends INavigationItems {
   type: string;
 }
 
-interface IDrink {
+interface IMenuItem {
   name: string;
   description: string;
   price: number;
   pathToImg: string;
 }
 
-export { INavigationItems, IFooterContacts, IDrink };
+interface IMenu {
+  category: string;
+  menuItems: IMenuItem[];
+}
+
+export { INavigationItems, IFooterContacts, IMenuItem, IMenu };

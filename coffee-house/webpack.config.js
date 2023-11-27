@@ -29,11 +29,12 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './src/assets/images/',
+              outputPath: './src/assets/',
             },
           },
         ],
       },
+      
     ],
   },
   resolve: {

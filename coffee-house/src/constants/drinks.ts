@@ -1,6 +1,6 @@
-import { IDrink } from '../types/types';
+import { IMenuItem } from '../types/types';
 
-const FAVORITE_DRINKS: IDrink[] = [
+const FAVORITE_DRINKS: IMenuItem[] = [
   {
     name: 'S’mores Frappuccino',
     description: `This new drink takes an espresso and mixes

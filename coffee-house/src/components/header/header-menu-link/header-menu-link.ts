@@ -4,7 +4,7 @@ import Link from '../../link/link';
 import MenuLogo from '../../menu-logo/menu-logo';
 import './header-menu-link.scss';
 
-export default class HeaderMenuLink extends Link {
+class HeaderMenuLink extends Link {
   constructor() {
     super(
       '',
@@ -28,3 +28,5 @@ export default class HeaderMenuLink extends Link {
     ).getNode();
   }
 }
+
+export default new HeaderMenuLink().getNode();

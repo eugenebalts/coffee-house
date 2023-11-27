@@ -17,7 +17,7 @@ export default class Header extends BaseComponent<'header'> {
 
     const headerLogo = new Logo().getNode();
     const headerNavigation = new HeaderNav().getNode();
-    const headerMenuLink = new HeaderMenuLink().getNode();
+    const headerMenuLink = HeaderMenuLink;
 
     wrapper.append(headerLogo, headerNavigation, headerMenuLink);
     container.append(wrapper);

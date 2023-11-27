@@ -1,0 +1,83 @@
+@import '../../../styles/base/variables';
+
+.section_menu {
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  &__nav {
+    display: flex;
+    gap: 16px;
+
+    &-item {
+      gap: 8px;
+      padding: 8px 16px 8px 8px;
+      border-color: #C1B6AD;
+      transition: all 0.3s linear;
+      cursor: pointer;
+
+      &:hover, &_active {
+        background-color: $color-khaki;
+        border-color: $color-khaki;
+        color: $color-light;
+
+        .section_menu__nav-item__icon {
+            background-color: $color-light;
+        }
+      }
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 30px;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        background-color: #C1B6AD;
+        transition: background-color 0.3s linear;
+
+        &:after {
+          display: block;
+        }
+
+        &-Tea {
+          &:after {
+            content: '🥛';
+          }
+        }
+
+        &-Coffee {
+          &:after {
+            content: '☕';
+          }
+        }
+
+        &-Dessert {
+          &:after {
+            content: '🍰';
+          }
+        }
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    &-item {
+      min-width: 310px;
+      max-width: 310px;
+
+      & {
+
+      }
+    }
+  }
+}
