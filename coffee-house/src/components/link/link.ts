@@ -1,4 +1,5 @@
 import getHref from '../../page-href';
+import { AppRoutesPath } from '../../router/types';
 import BaseComponent from '../base-component';
 import './link.scss';
 
@@ -34,7 +35,8 @@ export default class Link extends BaseComponent<'a'> {
   }
 
   private handleAnchorLink(href: string): void {
-    window.history.pushState({}, '', this.pageHref);
+    if (href !== AppRoutesPath.CONTACT_US)
+      window.history.pushState({}, '', this.pageHref);
     const changeURL = new CustomEvent('changeURL', { bubbles: true });
     window.dispatchEvent(changeURL);
 
