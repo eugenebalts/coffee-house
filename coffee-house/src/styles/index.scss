@@ -1,0 +1,42 @@
+@import './libs/_reset.scss';
+@import './base/_fonts.scss';
+@import './base//variables';
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 40px;
+  overflow-x: hidden;
+  font: $font-main;
+  color: $color-dark;
+  background-color: $color-light;
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
+
+header,
+footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  @media (width >= 1440px) {
+    max-width: 1360px;
+  }
+}

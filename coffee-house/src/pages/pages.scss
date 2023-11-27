@@ -1,0 +1,62 @@
+@import '../styles/base/variables';
+
+.main {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 100px;
+    gap: 100px;
+  }
+}
+
+.section {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    &-h1 {
+      @include font-h1;
+    }
+    
+    &-h2 {
+      @include font-h2;
+    }
+
+    i {
+      color: $color-accent;
+    }
+
+    &_dark {
+      color: $color-dark;
+    }
+
+    &_light {
+      color: $color-light;
+    }
+  }
+
+  &__subtitle {
+    font: $font-main;
+
+    &_dark {
+      color: $color-dark;
+    }
+
+    &_light {
+      color: $color-light;
+    }
+  }
+
+  &__button {
+    &_light {
+
+    }
+
+    &_dark {
+
+    }
+  }
+}

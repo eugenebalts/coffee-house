@@ -1,0 +1,91 @@
+@import '../../styles/base/variables';
+
+.link {
+  &--inline {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: fit-content;
+    width: fit-content;
+
+    &_dark {
+      color: $color-dark;
+
+      &:after {
+        background-color: $color-dark;
+      }
+    }
+
+    &_light {
+      color: $color-light;
+
+      &:after {
+        background-color: $color-light;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      bottom: -4px;
+      height: 2px;
+      transition: width 0.2s linear;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+
+    &:not(:hover) {
+      &:after {
+        width: 0%;
+        left: 100%;
+        transform: scaleX(-1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font: $font-main-bold;
+    width: fit-content;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 100px;
+    transition: background-color 0.3s linear;
+
+    &_dark {
+      border-color: $color-dark;
+
+      &:hover {
+        color: $color-light;
+        background-color: $color-dark;
+
+        * {
+          color: $color-light;
+        }
+      }
+
+      &-filled {
+        background-color: $color-dark;
+      }
+    }
+
+    &_light {
+      border-color: $color-light;
+
+      &-filled {
+        background-color: $color-light;
+      }
+    }
+    
+  }
+}

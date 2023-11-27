@@ -1,0 +1,74 @@
+@import '../../../styles/base/variables';
+
+
+.section_app {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__background {
+    width: 630px;
+    aspect-ratio: 1;
+    background: url('../../../assets/images/section-app.svg') center/cover no-repeat; 
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__button {
+    width: 200px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+
+    &-title {
+      font: $font-description-small;
+      color: $color-dark;
+
+      b {
+        font: $font-main-bold;
+      }
+    }
+    
+    &:hover &-icon {
+
+      &_as {
+        background-image: url('../../../assets/icons/apple-light.svg');
+      }
+
+      &_gm {
+        background-image: url('../../../assets/icons/google-light.svg');
+      }
+    }
+
+    &-icon {
+      width: 36px;
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+      
+      &_as {
+        background-image: url('../../../assets/icons/apple-dark.svg');
+      }
+
+      &_gm {
+        background-image: url('../../../assets/icons/google-dark.svg');
+      }
+      
+    }
+  }
+
+}
