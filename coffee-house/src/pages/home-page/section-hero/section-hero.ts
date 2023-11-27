@@ -3,12 +3,14 @@ import Link from '../../../components/link/link';
 import MenuLogo from '../../../components/menu-logo/menu-logo';
 import './section-hero.scss';
 import '../../pages.scss';
+import { AppRoutesPath } from '../../../router/types';
 
 export default class SectionHero extends BaseComponent<'section'> {
   constructor() {
     super('section', ['main__section', 'section_hero']);
 
     this.node.append(this.createMarkup());
+    this.node.id = 'section_hero';
   }
 
   private createMarkup() {
@@ -54,7 +56,7 @@ export default class SectionHero extends BaseComponent<'section'> {
         'link--button_light-filled',
         'section_hero__button',
       ],
-      '/'
+      AppRoutesPath.MENU
     ).getNode();
 
     const buttonTitle = new BaseComponent(

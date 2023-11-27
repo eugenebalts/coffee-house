@@ -8,7 +8,16 @@ export default class Link extends BaseComponent<'a'> {
 
     this.node.addEventListener('click', (e) => {
       e.preventDefault();
-      this.changeUrlEvent(href);
+
+      if (href.startsWith('/#')) {
+        this.handleAnchorLink(href);
+      } else if (href.startsWith('http')) {
+        this.handleHttpLink(href);
+      } else if (href.startsWith('tel:')) {
+        this.handlePhoneCallLink(href);
+      } else {
+        this.changeUrlEvent(href);
+      }
     });
   }
 
@@ -16,5 +25,26 @@ export default class Link extends BaseComponent<'a'> {
     window.history.pushState({}, '', href);
     const changeURL = new CustomEvent('changeURL', { bubbles: true });
     window.dispatchEvent(changeURL);
+  }
+
+  private handleAnchorLink(href: string): void {
+    const hash = href.split('/')[1];
+
+    const navigateToElement = document.body.querySelector(`${hash}`);
+
+    if (navigateToElement) {
+      navigateToElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
+
+  private handleHttpLink(href: string): void {
+    window.open(href, '_blank');
+  }
+
+  private handlePhoneCallLink(href: string) {
+    window.location.href = href;
   }
 }

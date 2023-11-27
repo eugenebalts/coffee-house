@@ -1,6 +1,6 @@
 import BaseComponent from '../base-component';
 import Link from '../link/link';
-import CONTACTS from './CONTACTS';
+import CONTACTS from '../../constants/contacts';
 import './footer.scss';
 import SOCIAL_MEDIA_DATA from './social-medias/SOCIAL-MEDIA-DATA';
 
@@ -8,6 +8,7 @@ export default class Footer extends BaseComponent<'footer'> {
   constructor() {
     super('footer', ['footer']);
 
+    this.node.id = 'footer';
     this.node.append(this.createMarkup());
   }
 
@@ -85,8 +86,7 @@ export default class Footer extends BaseComponent<'footer'> {
       const contactItemLink = new Link(
         '',
         ['footer__link', 'link--inline', 'link--inline_light'],
-        // `${contact.href}`
-        ''
+        `${contact.href}`
       ).getNode();
 
       const contactItemTitle = new BaseComponent(

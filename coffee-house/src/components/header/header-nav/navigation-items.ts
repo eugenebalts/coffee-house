@@ -1,21 +1,22 @@
+import { AppRoutesPath } from '../../../router/types';
 import { INavigationItems } from '../../../types/types';
 
 const navigationItems: INavigationItems[] = [
   {
     title: 'Favorite Coffee',
-    href: '/',
+    href: AppRoutesPath.FAVORITE,
   },
   {
     title: 'About',
-    href: '/',
+    href: AppRoutesPath.ABOUT,
   },
   {
     title: 'Mobile App',
-    href: '/',
+    href: AppRoutesPath.APPLICATION,
   },
   {
     title: 'Contact Us',
-    href: '/',
+    href: AppRoutesPath.CONTACT_US,
   },
 ];
 

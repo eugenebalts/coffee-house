@@ -1,3 +1,4 @@
+import { AppRoutesPath } from '../../../router/types';
 import BaseComponent from '../../base-component';
 import Link from '../../link/link';
 import MenuLogo from '../../menu-logo/menu-logo';
@@ -13,7 +14,7 @@ export default class HeaderMenuLink extends Link {
         'link--inline_dark',
         'header__link',
       ],
-      '/menu'
+      AppRoutesPath.MENU
     );
 
     this.node.append(this.createMenuLinkTitle(), new MenuLogo().getNode());

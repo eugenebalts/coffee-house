@@ -1,4 +1,6 @@
+import { AppRoutesPath } from '../../router/types';
 import BaseComponent from '../base-component';
+import Link from '../link/link';
 import './logo.scss';
 
 export default class Logo extends BaseComponent<'div'> {
@@ -9,7 +11,7 @@ export default class Logo extends BaseComponent<'div'> {
   }
 
   private createMarkup() {
-    const logoLink = new BaseComponent('a', ['logo__link']).getNode();
+    const logoLink = new Link('', ['logo__link'], AppRoutesPath.HOME).getNode();
 
     return logoLink;
   }

@@ -9,6 +9,7 @@ export default class SectionFavorite extends BaseComponent<'section'> {
     super('section', ['section_favorite', 'main__section']);
 
     this.node.append(this.createMarkup());
+    this.node.id = 'section_favorite';
   }
 
   private createMarkup() {
