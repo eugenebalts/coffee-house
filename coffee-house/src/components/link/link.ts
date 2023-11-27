@@ -23,6 +23,7 @@ export default class Link extends BaseComponent<'a'> {
 
   private changeUrlEvent(href: string): void {
     const currentHref = window.location.href;
+    console.log('aboba');
     window.history.pushState({}, '', currentHref + href);
     const changeURL = new CustomEvent('changeURL', { bubbles: true });
     window.dispatchEvent(changeURL);
