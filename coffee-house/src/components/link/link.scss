@@ -63,11 +63,11 @@
     transition: background-color 0.3s linear;
 
     &_dark {
-      border-color: $color-dark;
+      border-color: $color-khaki;
 
       &:hover {
         color: $color-light;
-        background-color: $color-dark;
+        background-color: $color-khaki;
 
         * {
           color: $color-light;

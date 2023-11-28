@@ -3,7 +3,7 @@ import { INavigationItems } from '../../../types/types';
 
 const navigationItems: INavigationItems[] = [
   {
-    title: 'Favorite Coffee',
+    title: 'Favorite coffee',
     href: AppRoutesPath.FAVORITE,
   },
   {
@@ -11,11 +11,11 @@ const navigationItems: INavigationItems[] = [
     href: AppRoutesPath.ABOUT,
   },
   {
-    title: 'Mobile App',
+    title: 'Mobile app',
     href: AppRoutesPath.APPLICATION,
   },
   {
-    title: 'Contact Us',
+    title: 'Contact us',
     href: AppRoutesPath.CONTACT_US,
   },
 ];
