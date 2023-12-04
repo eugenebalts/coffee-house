@@ -57,6 +57,10 @@
         @media (width < 1440px) {
           transform: scale(1.05);
         }
+
+        @include mobile {
+          transform: scale(1.25);
+        }
       }
 
       @media (hover: hover) {

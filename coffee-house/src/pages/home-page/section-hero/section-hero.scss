@@ -1,7 +1,6 @@
 @import '../../../styles/base/variables';
 
-.section {
-  &_hero {
+.section_hero {
     padding: 100px;
     width: 100%;
     background: url('../../../assets/images/section-hero.svg') center/cover no-repeat;
@@ -11,8 +10,12 @@
       padding: 100px 60px;
     }
 
+    @include under-tablet {
+      padding: 60px 16px; 
+    }
+
     &__wrapper {
-      width: 530px;
+      max-width: 530px;
     }
 
     &__button {
@@ -26,8 +29,12 @@
         transform: scale(0) translateX(4px);
         transition: all 0.3s linear;
 
+
         @include tablet {
+        // @media (hover:not(hover)) {
           transform: scale(1) translateX(4px);
+        // }
+          // transform: scale(1) translateX(4px);
         }
       }
 
@@ -36,7 +43,9 @@
         transition: all 0.3s linear;
 
         @include tablet {
+        // @media (hover:not(hover)) {
           transform: translateX(-4px);
+        // }
         }
       }
 
@@ -56,4 +65,4 @@
       }
     }
   }
-}
+

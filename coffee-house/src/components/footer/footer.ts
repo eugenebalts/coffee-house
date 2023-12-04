@@ -35,7 +35,7 @@ export default class Footer extends BaseComponent<'footer'> {
       'section__title',
     ]).getNode();
     socialTitle.innerHTML =
-      'Sip, Savor, Smile.<br><span>It’s coffee time!</span>';
+      'Sip, Savor, Smile. <br><span>It’s coffee time!</span>';
 
     const socialList = this.createSocialList();
 

@@ -14,14 +14,25 @@
 
     @include tablet {
       padding: 100px 60px;
+      gap: 40px;
+    }
+
+    @include under-tablet {
+      padding: 60px 16px;
     }
   }
 
   &__title {
     @include font-h2;
 
-    i {
+    span {
       color: $color-accent;
+    }
+
+    @include mobile {
+      br {
+      display: none;
+        }
     }
   }
 

@@ -19,6 +19,10 @@
     margin-bottom: 40px; 
     cursor: pointer;
 
+    @include under-tablet {
+      display: none;
+    }
+
     @media (hover: hover) {
       &:hover {
         background-color: $color-khaki;
@@ -53,6 +57,15 @@
       display: flex;
       width: 480px;
       overflow-x: hidden;
+
+      @include under-tablet {
+        width: unset;
+        max-width: 480px;
+      }
+
+      @include mobile {
+        max-width: 348px;
+      }
     }
   }
 

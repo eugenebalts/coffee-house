@@ -9,6 +9,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 100px;
+
+    @include under-tablet {
+      gap: 40px;
+    }
   }
 
   &__content {
@@ -25,12 +29,17 @@
   &__background {
     width: 630px;
     aspect-ratio: 1;
-    background: url('../../../assets/images/section-app.svg') center/cover no-repeat; 
+    background: url('../../../assets/images/section-app.svg') center/cover no-repeat;
+
+    @include under-tablet {
+      width: 348px;
+    }
   }
 
   &__navigation {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
   }
 
   &__button {
