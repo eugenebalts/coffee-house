@@ -3,7 +3,13 @@
 .section_menu {
   &__title {
     text-align: center;
+    width: 80%;
+    
+    @include tablet {
+      width: 100%;
+    }
   }
+
   &__content {
     display: flex;
     align-items: center;
@@ -65,9 +71,27 @@
     gap: 40px;
     justify-content: center;
 
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
     &-item {
       min-width: 310px;
       max-width: 310px;
+      height: 506px;
     }
+  }
+
+  &__load-more-btn {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    background-image: url('../../../assets/icons/refresh-icon.svg');
   }
 }
