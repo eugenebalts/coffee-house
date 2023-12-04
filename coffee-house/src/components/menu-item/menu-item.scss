@@ -44,10 +44,12 @@
       align-items: flex-end;
     }
 
-    &:hover {
-      .menu-item__image {
-        &:after {
-          transform: scale(1);
+    @media (hover: hover) {
+      &:hover {
+        .menu-item__image {
+          &:after {
+            transform: scale(1);
+          }
         }
       }
     }

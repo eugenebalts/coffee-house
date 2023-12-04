@@ -1,6 +1,14 @@
+@import '../../../styles/base/variables';
+
 .section_favorite {
   &__wrapper {
     justify-content: center;
     align-items: center;
+  }
+
+  &__title {
+    @include tablet {
+      text-align: center;
+    }
   }
 }

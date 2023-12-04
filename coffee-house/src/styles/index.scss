@@ -8,12 +8,6 @@ body {
   scroll-behavior: smooth;
 }
 
-i {
-  display: inline-block;
-  transform: skew(5deg) translateX(-5px);
-
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -39,11 +33,20 @@ main {
 }
 
 .container {
-  max-width: 95%;
+  padding: 0 40px;
   margin: 0 auto;
   overflow-x: hidden;
 
   @media (width >= 1440px) {
     max-width: 1360px;
+    padding: 0;
   }
+
+  @media (width <= 1440px) {
+    padding: 0 40px;
+  }
+
+  @media (width <= 380px) {
+    padding: 16px;
+  } 
 }

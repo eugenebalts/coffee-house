@@ -25,7 +25,8 @@
       @include font-h2;
     }
 
-    i {
+    span {
+      font-style: italic;
       color: $color-accent;
     }
 

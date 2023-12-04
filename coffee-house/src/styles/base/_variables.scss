@@ -5,11 +5,8 @@ $color-accent: #B0907A;
 $color-khaki: #665F55;
 
 // breakpoints
-$width-small-mobile: 380px;
-$width-mobile: 768px;
-$width-tablet: 1024px;
-$width-pre-tablet: 1200px;
-$width-laptop: 1440px;
+$width-mobile: 380px;
+$width-tablet: 768px;
 
 @mixin small-mobile {
   @media (max-width: $width-small-mobile) {

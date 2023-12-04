@@ -20,7 +20,7 @@ export default class SectionMenu extends BaseComponent<'section'> {
       'section_menu__title',
       'section__title-h2',
     ]).getNode();
-    title.innerHTML = `Behind each of our cups <br>hides an <i>amazing surprise</i>`;
+    title.innerHTML = `Behind each of our cups <br>hides an <span>amazing surprise</span>`;
 
     const content = this.createSectionContent();
 

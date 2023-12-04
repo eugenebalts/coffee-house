@@ -8,8 +8,13 @@
     display: flex;
     padding: 100px;
     background-color: $color-khaki;
-    gap: 137px;
+    gap: 100px 137px;
     border-radius: 40px;
+    flex-wrap: wrap;
+
+    @include tablet {
+      padding: 100px 60px;
+    }
   }
 
   &__title {
@@ -40,32 +45,41 @@
       background-repeat: no-repeat;
       transition: background-color 0.3s linear;
 
-      &:hover {
-        background-color: $color-light;
-        animation: background-size-out 0.4s linear;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: $color-light;
+          animation: background-size-out 0.4s linear;
+        }
       }
 
       &_instagram {
         background-image: url('../../assets/icons/instagram-icon_light.svg');
 
-        &:hover {
-          background-image: url('../../assets/icons/instagram-icon_dark.svg');
+        @media (hover: hover) {
+          &:hover {
+            background-image: url('../../assets/icons/instagram-icon_dark.svg');
+          }
         }
       }
 
       &_facebook {
         background-image: url('../../assets/icons/facebook-icon_light.svg');
 
-        &:hover {
-          background-image: url('../../assets/icons/facebook-icon_dark.svg');
+        @media (hover: hover) {
+          &:hover {
+            background-image: url('../../assets/icons/facebook-icon_dark.svg');
+          }
         }
       }
 
       &_twitter {
         background-image: url('../../assets/icons/twitter-icon_light.svg');
 
-        &:hover {
-          background-image: url('../../assets/icons/twitter-icon_dark.svg');
+        @media (hover: hover) {
+          &:hover {
+            background-image: url('../../assets/icons/twitter-icon_dark.svg');
+          }
         }
       }
     }

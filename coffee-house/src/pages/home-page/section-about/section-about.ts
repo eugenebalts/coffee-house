@@ -20,7 +20,7 @@ export default class SectionAbout extends BaseComponent<'section'> {
       'section__title_dark',
       'section__title-h2',
     ]).getNode();
-    title.innerHTML = `Resource is <i>the perfect and cozy place</i>
+    title.innerHTML = `Resource is <span>the perfect and cozy place</span>
       where you can enjoy a variety of hot beverages, relax, catch up
       with friends, or get some work done.`;
 

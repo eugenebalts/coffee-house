@@ -34,9 +34,11 @@
       transition: width 0.2s linear;
     }
 
-    &:hover {
-      &:after {
-        width: 100%;
+    @media (hover: hover) {
+      &:hover {
+        &:after {
+          width: 100%;
+        }
       }
     }
 
@@ -65,12 +67,14 @@
     &_dark {
       border-color: $color-khaki;
 
-      &:hover {
-        color: $color-light;
-        background-color: $color-khaki;
-
-        * {
+      @media (hover: hover) {
+        &:hover {
           color: $color-light;
+          background-color: $color-khaki;
+  
+          * {
+            color: $color-light;
+          }
         }
       }
 
