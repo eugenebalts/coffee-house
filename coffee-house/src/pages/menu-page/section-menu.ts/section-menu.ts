@@ -87,8 +87,6 @@ export default class SectionMenu extends BaseComponent<'section'> {
       if (i === 0) {
         this.activeCategory = i;
         navigationItem.classList.add('section_menu__nav-item_active');
-
-        console.log(this.activeCategory);
       }
 
       const itemIcon = new BaseComponent('div', [

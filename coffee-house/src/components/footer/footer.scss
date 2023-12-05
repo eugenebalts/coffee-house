@@ -14,11 +14,11 @@
 
     @include tablet {
       padding: 100px 60px;
-      gap: 40px;
     }
 
     @include under-tablet {
       padding: 60px 16px;
+      gap: 40px;
     }
   }
 
