@@ -1,9 +1,13 @@
 @import '../../../styles/base/variables';
 
 .section_menu {
+  &__wrapper {
+    align-items: center;
+  }
+
   &__title {
     text-align: center;
-    width: 80%;
+    width: 60%;
     
     @include tablet {
       width: 100%;

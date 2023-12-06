@@ -42,7 +42,10 @@ export default class SectionMenu extends BaseComponent<'section'> {
   }
 
   private createMarkup() {
-    const wrapper = new BaseComponent('div', ['section__wrapper']).getNode();
+    const wrapper = new BaseComponent('div', [
+      'section__wrapper',
+      'section_menu__wrapper',
+    ]).getNode();
 
     const title = new BaseComponent('h1', [
       'section__title',
