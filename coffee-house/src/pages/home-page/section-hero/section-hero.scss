@@ -1,18 +1,24 @@
 @import '../../../styles/base/variables';
 
-.section {
-  &_hero {
+.section_hero {
     padding: 100px;
     width: 100%;
     background: url('../../../assets/images/section-hero.svg') center/cover no-repeat;
     border-radius: 40px;
 
+    @include tablet {
+      padding: 100px 60px;
+    }
+
+    @include under-tablet {
+      padding: 60px 16px; 
+    }
+
     &__wrapper {
-      width: 530px;
+      max-width: 530px;
     }
 
     &__button {
-      position: relative;
       width: 200px;
       font: $font-main-bold;
       color: $color-dark;
@@ -20,25 +26,43 @@
       transition: all 0.3s linear;
 
       .menu-logo {
-        transform: scale(0);
+        transform: scale(0) translateX(4px);
         transition: all 0.3s linear;
+
+
+        @include tablet {
+        // @media (hover:not(hover)) {
+          transform: scale(1) translateX(4px);
+        // }
+          // transform: scale(1) translateX(4px);
+        }
       }
 
       .button__title {
-        transform: translateX(8px);
+        transform: translateX(10px);
         transition: all 0.3s linear;
+
+        @include tablet {
+        // @media (hover:not(hover)) {
+          transform: translateX(-4px);
+        // }
+        }
       }
 
-      &:hover {
-        .button__title {
-          transform: translateX(-8px);
-          
-        }
-
-        .menu-logo {
-          transform: scale(1);
+      @media (hover: hover) {
+        &:hover {
+          gap: 8px;
+  
+          .button__title {
+            transform: translateX(-4px);
+            
+          }
+  
+          .menu-logo {
+            transform: scale(1);
+          }
         }
       }
     }
   }
-}
+

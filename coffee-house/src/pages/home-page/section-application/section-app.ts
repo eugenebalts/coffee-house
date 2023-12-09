@@ -38,7 +38,7 @@ export default class SectionApp extends BaseComponent<'section'> {
       'section__title-dark',
     ]).getNode();
 
-    title.innerHTML = `<i>Download</i> our apps to start ordering`;
+    title.innerHTML = `<span>Download</span> our apps to start ordering`;
 
     const description = new BaseComponent(
       'p',

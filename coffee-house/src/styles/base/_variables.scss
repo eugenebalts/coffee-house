@@ -5,17 +5,9 @@ $color-accent: #B0907A;
 $color-khaki: #665F55;
 
 // breakpoints
-$width-small-mobile: 380px;
-$width-mobile: 768px;
-$width-tablet: 1024px;
-$width-pre-tablet: 1200px;
-$width-laptop: 1440px;
-
-@mixin small-mobile {
-  @media (max-width: $width-small-mobile) {
-    @content;
-  }
-}
+$width-mobile: 380px;
+$width-tablet: 768px;
+$width-under-tablet: 767px;
 
 @mixin mobile {
   @media (max-width: $width-mobile) {
@@ -29,23 +21,12 @@ $width-laptop: 1440px;
   }
 }
 
-@mixin pre-tablet {
-  @media (max-width: $width-pre-tablet) {
+@mixin under-tablet {
+  @media (max-width: $width-under-tablet) {
     @content;
   }
 }
 
-@mixin laptop {
-  @media (max-width: $width-laptop) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: $width-tablet) {
-    @content;
-  }
-}
 
 // fonts
 $font-family-inter: 'Inter', sans-serif;
@@ -58,24 +39,16 @@ $font-description-small: 600 10px/1.4 $font-family-inter;
 @mixin font-h1 {
   font: 600 72px/1.05 $font-family-inter;
 
-  @include tablet {
-    // font-size: ;
-  }
-
-  @include mobile {
-    // font-size: ;
+  @include under-tablet {
+    font: 600 42px/1.15 $font-family-inter;
   }
 }
 
 @mixin font-h2 {
   font: 600 60px/1.25 $font-family-inter;
 
-  @include tablet {
-    // font-size: ;
-  }
-
-  @include mobile {
-    // font-size: ;
+  @include under-tablet {
+    font: 600 32px/1.25 $font-family-inter;
   }
 }
 

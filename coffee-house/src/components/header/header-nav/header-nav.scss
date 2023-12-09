@@ -4,6 +4,10 @@
   display: flex;
   align-items: center;
 
+  @include tablet {
+    display: none;
+  }
+
   &-list {
     display: flex;
     gap: 40px;

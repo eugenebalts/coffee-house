@@ -1,4 +1,10 @@
+@import '../../../styles/base/variables';
+
 .header__menu-link {
+  @include tablet {
+    display: none;
+  }
+
   &_active {
     &:not(:hover) {
       &:after {

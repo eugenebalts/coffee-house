@@ -19,25 +19,28 @@
     margin-bottom: 40px; 
     cursor: pointer;
 
-    &:hover {
-      background-color: $color-khaki;
+    @include under-tablet {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-khaki;
+      }
+    }
+
+    &-left, &-right {
+      background-image: url('../../assets/icons/arrow-dark.svg');
+
+      @media (hover: hover) {
+        &:hover {
+          background-image: url('../../assets/icons/arrow-light.svg');
+        }
+      }
     }
 
     &-left {
-      background-image: url('../../assets/icons/arrow-dark.svg');
       transform: rotate(180deg);
-
-      &:hover {
-        background-image: url('../../assets/icons/arrow-light.svg');
-      }
-    }
-
-    &-right {
-      background-image: url('../../assets/icons/arrow-dark.svg');
-
-      &:hover {
-        background-image: url('../../assets/icons/arrow-light.svg');
-      }
     }
   }
 
@@ -54,6 +57,15 @@
       display: flex;
       width: 480px;
       overflow-x: hidden;
+
+      @include under-tablet {
+        width: unset;
+        max-width: 480px;
+      }
+
+      @include mobile {
+        max-width: 348px;
+      }
     }
   }
 

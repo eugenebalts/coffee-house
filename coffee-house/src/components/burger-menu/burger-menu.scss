@@ -1,0 +1,26 @@
+@import '../../styles/base/variables';
+
+.burger-menu {
+  display: none !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 44px !important;
+  aspect-ratio: 1;
+  border-color: $color-khaki;
+  padding: 0 !important;
+
+  span {
+    display: block;
+    width: 16px;
+    height: 1.5px;
+    background-color: $color-dark;
+    border-radius: 2px;
+  }
+
+
+  @include tablet {
+    display: flex !important;
+  }
+}

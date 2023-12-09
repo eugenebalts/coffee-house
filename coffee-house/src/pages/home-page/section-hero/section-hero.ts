@@ -42,7 +42,7 @@ export default class SectionHero extends BaseComponent<'section'> {
       'section__title-h1',
       'section__title_light',
     ]).getNode();
-    sectionTitle.innerHTML = `<i>Enjoy</i> premium coffee at our charming cafe`;
+    sectionTitle.innerHTML = `<span>Enjoy</span> premium coffee at our charming cafe`;
 
     return sectionTitle;
   }

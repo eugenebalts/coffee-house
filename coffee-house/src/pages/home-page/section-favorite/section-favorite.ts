@@ -29,11 +29,12 @@ export default class SectionFavorite extends BaseComponent<'section'> {
   private createSectionTitle() {
     const sectionTitle = new BaseComponent('h2', [
       'section__title',
+      'section_favorite__title',
       'section__title-h2',
       'section__title_dark',
     ]).getNode();
 
-    sectionTitle.innerHTML = `Choose your <i>favorite</i> coffee`;
+    sectionTitle.innerHTML = `Choose your <span>favorite</span> coffee`;
 
     return sectionTitle;
   }

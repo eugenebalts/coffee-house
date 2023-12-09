@@ -6,8 +6,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 100px;
+
+    @include under-tablet {
+      gap: 40px;
+    }
   }
 
   &__content {
@@ -15,20 +20,26 @@
     flex-direction: column;
     gap: 40px;
     max-width: 630px; 
-    // flex: 1;
+
+    @media (width < 1440px) {
+      max-width: 100%;
+    }
   }
 
   &__background {
-    max-width: 630px;
-    min-width: 630px;
-    // flex: 1;
+    width: 630px;
     aspect-ratio: 1;
-    background: url('../../../assets/images/section-app.svg') center/cover no-repeat; 
+    background: url('../../../assets/images/section-app.svg') center/cover no-repeat;
+
+    @include under-tablet {
+      width: 348px;
+    }
   }
 
   &__navigation {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
   }
 
   &__button {
@@ -49,14 +60,15 @@
       }
     }
     
-    &:hover &-icon {
-
-      &_as {
-        background-image: url('../../../assets/icons/apple-light.svg');
-      }
-
-      &_gm {
-        background-image: url('../../../assets/icons/google-light.svg');
+    @media (hover: hover) {
+      &:hover &-icon {
+        &_as {
+          background-image: url('../../../assets/icons/apple-light.svg');
+        }
+  
+        &_gm {
+          background-image: url('../../../assets/icons/google-light.svg');
+        }
       }
     }
 
