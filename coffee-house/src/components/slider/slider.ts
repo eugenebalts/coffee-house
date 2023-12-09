@@ -4,11 +4,13 @@ import './slider.scss';
 import { IMenuItem } from '../../types/types';
 
 export default class Slider extends BaseComponent<'div'> {
-  navigationLeft: HTMLElement;
-  navigationRight: HTMLElement;
-  indicatorList: HTMLElement;
-  activeSlide: number;
-  slides: IMenuItem[];
+  private navigationLeft: HTMLElement;
+  private navigationRight: HTMLElement;
+  private indicatorList: HTMLElement;
+  private activeSlide: number;
+  private slides: IMenuItem[];
+  private sliderCardsList: HTMLElement;
+  private sliderCardsListWidth: number = window.innerWidth > 767 ? 480 : 348;
 
   constructor(slides: IMenuItem[]) {
     super('div', ['slider']);
@@ -19,6 +21,7 @@ export default class Slider extends BaseComponent<'div'> {
     this.navigationLeft = this.createNavigationLeft();
     this.navigationRight = this.createNavigationRight();
 
+    this.sliderCardsList = this.createSliderCards();
     const sliderViewWrapper = this.createSliderViewWrapper();
 
     this.node.append(
@@ -26,6 +29,8 @@ export default class Slider extends BaseComponent<'div'> {
       sliderViewWrapper,
       this.navigationRight
     );
+
+    this.setListeners();
   }
 
   private createSliderViewWrapper() {
@@ -33,10 +38,9 @@ export default class Slider extends BaseComponent<'div'> {
       'slider__view-wrapper',
     ]).getNode();
 
-    const sliderCards = this.createSliderCards();
     const sliderIndicators = this.indicatorList;
 
-    sliderViewWrapper.append(sliderCards, sliderIndicators);
+    sliderViewWrapper.append(this.sliderCardsList, sliderIndicators);
 
     return sliderViewWrapper;
   }
@@ -90,11 +94,66 @@ export default class Slider extends BaseComponent<'div'> {
         'slider__indicator-item',
       ]).getNode();
 
-      if (i === this.activeSlide)
+      if (i === this.activeSlide) {
         indicatorItem.classList.add('slider__indicator-item_active');
+      } else {
+        indicatorItem.classList.remove('slider__indicator-item_active');
+      }
+
       indicatorList.append(indicatorItem);
     }
 
     return indicatorList;
+  }
+
+  private setListeners() {
+    this.navigationLeft.addEventListener('click', () => {
+      this.navigateLeft();
+    });
+
+    this.navigationRight.addEventListener('click', () => {
+      this.navigateRight();
+    });
+
+    window.addEventListener('resize', () => {
+      this.refreshWidth();
+    });
+  }
+
+  private navigateLeft() {
+    if (this.activeSlide > 0) {
+      this.activeSlide -= 1;
+    } else {
+      this.activeSlide = this.slides.length - 1;
+    }
+
+    this.sliderCardsList.style.transform = `translateX(-${
+      this.activeSlide * this.sliderCardsListWidth
+    }px)`;
+  }
+
+  private navigateRight() {
+    if (this.activeSlide < this.slides.length - 1) {
+      this.activeSlide += 1;
+    } else {
+      this.activeSlide = 0;
+    }
+
+    this.sliderCardsList.style.transform = `translateX(-${
+      this.activeSlide * this.sliderCardsListWidth
+    }px)`;
+  }
+
+  private refreshWidth() {
+    const widthBreakPoint = 767;
+
+    this.sliderCardsListWidth =
+      window.innerWidth >= widthBreakPoint ? 480 : 348;
+
+    if (this.sliderCardsList.style.transform) {
+      this.sliderCardsList.style.transform = `translateX(-${
+        this.activeSlide * this.sliderCardsListWidth
+      }px)`;
+    }
   }
 }

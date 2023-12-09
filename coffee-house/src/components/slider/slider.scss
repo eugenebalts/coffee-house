@@ -54,21 +54,21 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
+    overflow-x: hidden;
   }
 
   &__cards {
     &-list {
       display: flex;
       width: 480px;
-      overflow-x: hidden;
+      transition: transform 0.3s linear;
 
       @include under-tablet {
-        width: unset;
-        max-width: 480px;
+        width: 348px;
       }
 
       @include mobile {
-        max-width: 348px;
+        width: 348px;
       }
     }
   }
