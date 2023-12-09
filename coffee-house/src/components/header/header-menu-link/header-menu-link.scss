@@ -1,8 +1,17 @@
 @import '../../../styles/base/variables';
 
 .header__menu-link {
+  justify-self: flex-end;
+
   @include tablet {
-    display: none;
+    text-align: center;
+    margin: 0 auto;
+    font: 600 32px/1.25 $font-family-inter !important;
+
+    & .menu-logo {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &_active {

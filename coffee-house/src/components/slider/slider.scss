@@ -7,6 +7,10 @@
   gap: 10px;
   width: 100%;
 
+  @include under-tablet {
+    justify-content: center;
+  }
+
   &__navigation {
     width: 60px;
     height: 60px;

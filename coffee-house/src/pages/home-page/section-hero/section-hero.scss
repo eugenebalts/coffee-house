@@ -31,10 +31,7 @@
 
 
         @include tablet {
-        // @media (hover:not(hover)) {
           transform: scale(1) translateX(4px);
-        // }
-          // transform: scale(1) translateX(4px);
         }
       }
 
@@ -43,23 +40,18 @@
         transition: all 0.3s linear;
 
         @include tablet {
-        // @media (hover:not(hover)) {
           transform: translateX(-4px);
-        // }
         }
       }
 
       @media (hover: hover) {
         &:hover {
-          gap: 8px;
-  
           .button__title {
             transform: translateX(-4px);
-            
           }
   
           .menu-logo {
-            transform: scale(1);
+            transform: scale(1) translateX(4px);
           }
         }
       }

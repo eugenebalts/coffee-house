@@ -1,6 +1,7 @@
 import getHref from '../../page-href';
 import { AppRoutesPath } from '../../router/types';
 import BaseComponent from '../base-component';
+import burgerMenu from '../burger-menu/burger-menu';
 import './link.scss';
 
 export default class Link extends BaseComponent<'a'> {
@@ -21,6 +22,9 @@ export default class Link extends BaseComponent<'a'> {
       } else {
         this.changeUrlEvent(href);
       }
+
+      burgerMenu.classList.remove('burger-menu_open');
+      document.body.classList.remove('burger--open');
     });
   }
 
