@@ -11,9 +11,7 @@ export default class Slider extends BaseComponent<'div'> {
   private slides: IMenuItem[];
   private sliderCardsList: HTMLElement;
   private sliderCardsListWidth: number = window.innerWidth > 767 ? 480 : 348;
-  private autoSwipe = setInterval(() => {
-    this.navigateRight();
-  }, 5000);
+  private autoSwipe: NodeJS.Timeout;
 
   constructor(slides: IMenuItem[]) {
     super('div', ['slider']);
@@ -34,6 +32,14 @@ export default class Slider extends BaseComponent<'div'> {
     );
 
     this.setListeners();
+    this.autoSwipe = this.interval();
+  }
+
+  private interval() {
+    return setInterval(() => {
+      setTimeout;
+      this.navigateRight();
+    }, 5000);
   }
 
   private createSliderViewWrapper() {
@@ -97,6 +103,8 @@ export default class Slider extends BaseComponent<'div'> {
         'slider__indicator-item',
       ]).getNode();
 
+      indicatorItem.innerHTML = `<div></div>`;
+
       if (i === this.activeSlide) {
         indicatorItem.classList.add('slider__indicator-item_active');
       }
@@ -121,6 +129,7 @@ export default class Slider extends BaseComponent<'div'> {
     });
 
     this.setAutoSwipe();
+    this.mobileSwiping();
   }
 
   private navigateLeft() {
@@ -181,8 +190,59 @@ export default class Slider extends BaseComponent<'div'> {
   private setAutoSwipe() {
     clearInterval(this.autoSwipe);
 
-    this.autoSwipe = setInterval(() => {
-      this.navigateRight();
-    }, 5000);
+    this.autoSwipe = this.interval();
   }
+
+  private mobileSwiping() {
+    let startPosition = 0;
+    let endPosition = 0;
+
+    this.sliderCardsList.addEventListener('touchstart', (event) => {
+      handleTouchStart(event);
+    });
+
+    this.sliderCardsList.addEventListener('touchmove', (event) => {
+      handleTouchMove(event);
+    });
+
+    this.sliderCardsList.addEventListener('touchend', () => {
+      handleTouchEnd();
+    });
+
+    const handleTouchStart = (event: TouchEvent) => {
+      startPosition = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      endPosition = event.touches[0].clientX;
+
+      const currentPosition = () => {
+        const currentPosition = Number(
+          this.sliderCardsList.style.transform.split('-')[1]?.split('px')[0] ||
+            0
+        );
+        return currentPosition;
+      };
+
+      console.log(currentPosition());
+
+      this.sliderCardsList.style.transform = `translateX(-${
+        this.activeSlide * this.sliderCardsListWidth +
+        (startPosition - endPosition) / 3
+      }px)`;
+    };
+
+    const handleTouchEnd = () => {
+      if (startPosition < endPosition) {
+        this.navigateLeft();
+      } else {
+        this.navigateRight();
+      }
+
+      startPosition = 0;
+      endPosition = 0;
+    };
+  }
+
+  private animateIndicator(element: HTMLElement) {}
 }
