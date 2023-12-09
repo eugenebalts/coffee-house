@@ -11,6 +11,9 @@ export default class Slider extends BaseComponent<'div'> {
   private slides: IMenuItem[];
   private sliderCardsList: HTMLElement;
   private sliderCardsListWidth: number = window.innerWidth > 767 ? 480 : 348;
+  private autoSwipe = setInterval(() => {
+    this.navigateRight();
+  }, 5000);
 
   constructor(slides: IMenuItem[]) {
     super('div', ['slider']);
@@ -96,8 +99,6 @@ export default class Slider extends BaseComponent<'div'> {
 
       if (i === this.activeSlide) {
         indicatorItem.classList.add('slider__indicator-item_active');
-      } else {
-        indicatorItem.classList.remove('slider__indicator-item_active');
       }
 
       indicatorList.append(indicatorItem);
@@ -118,6 +119,8 @@ export default class Slider extends BaseComponent<'div'> {
     window.addEventListener('resize', () => {
       this.refreshWidth();
     });
+
+    this.setAutoSwipe();
   }
 
   private navigateLeft() {
@@ -130,6 +133,9 @@ export default class Slider extends BaseComponent<'div'> {
     this.sliderCardsList.style.transform = `translateX(-${
       this.activeSlide * this.sliderCardsListWidth
     }px)`;
+
+    this.setAutoSwipe();
+    this.refreshIndicator();
   }
 
   private navigateRight() {
@@ -142,6 +148,9 @@ export default class Slider extends BaseComponent<'div'> {
     this.sliderCardsList.style.transform = `translateX(-${
       this.activeSlide * this.sliderCardsListWidth
     }px)`;
+
+    this.setAutoSwipe();
+    this.refreshIndicator();
   }
 
   private refreshWidth() {
@@ -155,5 +164,25 @@ export default class Slider extends BaseComponent<'div'> {
         this.activeSlide * this.sliderCardsListWidth
       }px)`;
     }
+  }
+
+  private refreshIndicator() {
+    const activeClass = 'slider__indicator-item_active';
+
+    this.indicatorList.childNodes.forEach((indicator, idx) => {
+      if (indicator instanceof HTMLElement) {
+        idx === this.activeSlide
+          ? indicator.classList.add(activeClass)
+          : indicator.classList.remove(activeClass);
+      }
+    });
+  }
+
+  private setAutoSwipe() {
+    clearInterval(this.autoSwipe);
+
+    this.autoSwipe = setInterval(() => {
+      this.navigateRight();
+    }, 5000);
   }
 }
