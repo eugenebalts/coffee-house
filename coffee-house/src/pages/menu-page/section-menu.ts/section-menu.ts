@@ -12,16 +12,19 @@ export default class SectionMenu extends BaseComponent<'section'> {
   private cardsShowed: number = 0;
   private menuWrapper: HTMLElement;
   private loadMoreBtn: HTMLElement = this.createLoadMoreBtn();
+  private pageNavigation: HTMLElement;
 
   constructor() {
     super('section', ['section_menu', 'main__section']);
 
-    this.menuWrapper = new BaseComponent('div', [
-      'section_menu__menu-wrapper',
-    ]).getNode();
+    this.menuWrapper = this.initialMenuWrapper();
+
+    this.pageNavigation = this.createPageNavigation();
 
     this.refreshInnerWidth();
     this.node.append(this.createMarkup());
+
+    this.setListeners();
   }
 
   private refreshInnerWidth() {
@@ -52,6 +55,7 @@ export default class SectionMenu extends BaseComponent<'section'> {
       'section_menu__title',
       'section__title-h2',
     ]).getNode();
+
     title.innerHTML = `Behind each of our cups hides an <span>amazing surprise</span>`;
 
     const content = this.createSectionContent();
@@ -66,10 +70,9 @@ export default class SectionMenu extends BaseComponent<'section'> {
       'section_menu__content',
     ]).getNode();
 
-    const pageNavigation = this.createPageNavigation();
     this.createMenu(this.INITIAL_CARDS_SHOWED);
 
-    content.append(pageNavigation, this.menuWrapper);
+    content.append(this.pageNavigation, this.menuWrapper);
 
     return content;
   }
@@ -86,6 +89,8 @@ export default class SectionMenu extends BaseComponent<'section'> {
         'link',
         'link--button',
       ]).getNode();
+
+      navigationItem.setAttribute('category', String(i));
 
       if (i === 0) {
         this.activeCategory = i;
@@ -149,6 +154,10 @@ export default class SectionMenu extends BaseComponent<'section'> {
     }
   }
 
+  private initialMenuWrapper() {
+    return new BaseComponent('div', ['section_menu__menu-wrapper']).getNode();
+  }
+
   private createLoadMoreBtn() {
     const loadMoreBtn = new BaseComponent('button', [
       'link--button',
@@ -181,10 +190,53 @@ export default class SectionMenu extends BaseComponent<'section'> {
     return loadMoreBtn;
   }
 
-  private switchMenu(category: number) {
-    this.cardsShowed = 0;
-    this.cardsInMenu = 0;
-    this.activeCategory = category;
+  private setListeners() {
+    this.pageNavigation.addEventListener('click', (event) => {
+      this.switchMenu(event);
+    });
+  }
+
+  private switchMenu(event: MouseEvent) {
+    if (event.target instanceof HTMLElement) {
+      const targetTagName = event.target.tagName;
+      let navigationItem: HTMLElement | null = null;
+
+      switch (targetTagName) {
+        case 'LI':
+          navigationItem = event.target;
+
+          break;
+        case 'P':
+          navigationItem = event.target.closest('li');
+
+          break;
+        case 'DIV':
+          navigationItem = event.target.closest('li');
+
+          break;
+      }
+
+      if (navigationItem) {
+        this.activeCategory = Number(navigationItem.getAttribute('category'));
+        const activeClass = 'section_menu__nav-item_active';
+
+        this.pageNavigation.childNodes.forEach((navItem, i) => {
+          if (navItem instanceof HTMLElement) {
+            if (i !== this.activeCategory) {
+              navItem.classList.remove(activeClass);
+            } else {
+              navItem.classList.add(activeClass);
+            }
+          }
+        });
+
+        this.menuWrapper.innerHTML = '';
+        this.createMenu(this.INITIAL_CARDS_SHOWED);
+      }
+    }
+    // this.cardsShowed = 0;
+    // this.cardsInMenu = 0;
+    // this.activeCategory = category;
   }
 
   private createCard(menuItem: IMenuItem) {

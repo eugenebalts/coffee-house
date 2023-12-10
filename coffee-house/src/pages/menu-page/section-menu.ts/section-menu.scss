@@ -38,13 +38,25 @@
       transition: all 0.3s linear;
       cursor: pointer;
 
-      &:hover, &_active {
+      &_active {
         background-color: $color-khaki;
         border-color: $color-khaki;
         color: $color-light;
 
         .section_menu__nav-item__icon {
             background-color: $color-light;
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: $color-khaki;
+          border-color: $color-khaki;
+          color: $color-light;
+
+          .section_menu__nav-item__icon {
+            background-color: $color-light;
+          }
         }
       }
 
