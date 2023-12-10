@@ -86,7 +86,7 @@
       border-radius: 100px;
       background-color: #C1B6AD;
 
-      &_active {
+      // &_active {
         div {
           position: absolute;
           content: '';
@@ -94,9 +94,9 @@
           width: 0%;
           background-color: $color-dark;
           border-radius: 100px;
-          animation: indicate 5s linear infinite;
+          // animation: indicate 5s linear infinite;
         }
-      }
+      // }
     }
   }
 }
