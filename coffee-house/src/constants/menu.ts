@@ -3,6 +3,39 @@ import { IMenu } from '../types/types';
 const MENU: IMenu[] = [
   {
     category: 'Coffee',
+    additionally: {
+      size: [
+        {
+          name: 'S',
+          price: 0,
+          volume: '200 ml',
+        },
+        {
+          name: 'M',
+          price: 0.5,
+          volume: '300 ml',
+        },
+        {
+          name: 'L',
+          price: 1.0,
+          volume: '400 ml',
+        },
+      ],
+      additives: [
+        {
+          price: 0.5,
+          name: 'Sugar',
+        },
+        {
+          price: 0.5,
+          name: 'Cinnamon',
+        },
+        {
+          price: 0.5,
+          name: 'Syrup',
+        },
+      ],
+    },
     menuItems: [
       {
         name: 'Irish coffee',
@@ -60,6 +93,39 @@ const MENU: IMenu[] = [
   },
   {
     category: 'Tea',
+    additionally: {
+      size: [
+        {
+          name: 'S',
+          price: 0,
+          volume: '200 ml',
+        },
+        {
+          name: 'M',
+          price: 0.5,
+          volume: '300 ml',
+        },
+        {
+          name: 'L',
+          price: 1.0,
+          volume: '400 ml',
+        },
+      ],
+      additives: [
+        {
+          price: 0.5,
+          name: 'Sugar',
+        },
+        {
+          price: 0.5,
+          name: 'Lemon',
+        },
+        {
+          price: 0.5,
+          name: 'Syrup',
+        },
+      ],
+    },
     menuItems: [
       {
         name: 'Moroccan',
@@ -91,6 +157,39 @@ const MENU: IMenu[] = [
   },
   {
     category: 'Dessert',
+    additionally: {
+      size: [
+        {
+          name: 'S',
+          price: 0,
+          volume: '50 g',
+        },
+        {
+          name: 'M',
+          price: 0.5,
+          volume: '100 g',
+        },
+        {
+          name: 'L',
+          price: 1.0,
+          volume: '200 g',
+        },
+      ],
+      additives: [
+        {
+          price: 0.5,
+          name: 'Berries',
+        },
+        {
+          price: 0.5,
+          name: 'Nuts',
+        },
+        {
+          price: 0.5,
+          name: 'Jam',
+        },
+      ],
+    },
     menuItems: [
       {
         name: 'Marble cheesecake',

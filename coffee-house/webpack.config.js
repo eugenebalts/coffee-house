@@ -24,7 +24,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|mp4)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -35,6 +35,19 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.mp4$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './src/assets/',
+            },
+          },
+        ],
+      },
+      
       
     ],
   },

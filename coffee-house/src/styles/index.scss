@@ -11,7 +11,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  padding: 20px 0 40px;
+  // margin: 20px 0 40px;
   overflow-x: hidden;
   font: $font-main;
   color: $color-dark;
@@ -26,6 +26,14 @@ header,
 footer {
   flex-grow: 0;
   flex-shrink: 0;
+}
+
+header {
+  margin-top: 20px;
+}
+
+footer {
+  margin-bottom: 40px;
 }
 
 main {

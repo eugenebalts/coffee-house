@@ -30,57 +30,59 @@
     @include under-tablet {
       gap: 8px;
     }
+  }
 
-    &-item {
-      gap: 8px;
-      padding: 8px 16px 8px 8px;
-      border-color: #C1B6AD;
-      transition: all 0.3s linear;
-      cursor: pointer;
+  &__button {
+    gap: 8px;
+    padding: 8px 16px 8px 8px;
+    border-color: #C1B6AD;
+    transition: all 0.3s linear;
+    cursor: pointer;
 
-      &_active {
+    &_active {
+      background-color: $color-khaki;
+      border-color: $color-khaki;
+      color: $color-light;
+
+      .section_menu__button__icon {
+          background-color: $color-light;
+          color: $color-dark;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
         background-color: $color-khaki;
         border-color: $color-khaki;
         color: $color-light;
 
-        .section_menu__nav-item__icon {
-            background-color: $color-light;
+        .section_menu__button__icon {
+          background-color: $color-light;
+          color: $color-dark;
         }
       }
+    }
 
-      @media (hover: hover) {
-        &:hover {
-          background-color: $color-khaki;
-          border-color: $color-khaki;
-          color: $color-light;
+    &__icon {
+      width: 30px;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      background-size: 16px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #C1B6AD;
+      transition: background-color 0.3s linear;
 
-          .section_menu__nav-item__icon {
-            background-color: $color-light;
-          }
-        }
+      &-Tea {
+        background-image: url('../../../assets/icons/menu-tea-icon.svg');
       }
 
-      &__icon {
-        width: 30px;
-        aspect-ratio: 1;
-        border-radius: 100%;
-        background-size: 16px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: #C1B6AD;
-        transition: background-color 0.3s linear;
+      &-Coffee {
+        background-image: url('../../../assets/icons/menu-coffee-icon.svg');
+      }
 
-        &-Tea {
-          background-image: url('../../../assets/icons/menu-tea-icon.svg');
-        }
-
-        &-Coffee {
-          background-image: url('../../../assets/icons/menu-coffee-icon.svg');
-        }
-
-        &-Dessert {
-          background-image: url('../../../assets/icons/menu-dessert-icon.svg');
-        }
+      &-Dessert {
+        background-image: url('../../../assets/icons/menu-dessert-icon.svg');
       }
     }
   }
@@ -113,5 +115,129 @@
     background-position: center;
     background-size: 24px;
     background-image: url('../../../assets/icons/refresh-icon.svg');
+  }
+}
+
+body {
+  &.modal--open {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.modal-card {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(64, 63, 61, 0.80);
+  z-index: 1100;
+  padding: 40px;
+
+  &--showed {
+    display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    height: fit-content;
+    padding: 16px;
+    background-color: $color-light;
+    border-radius: 40px;
+  }
+
+  &__image {
+
+    @include under-tablet {
+      display: none;
+    }
+
+    & div {
+    width: 310px;
+    border-radius: 40px;
+  }}
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__additionally {
+    display: flex;
+    flex-direction:  column;
+    gap: 20px;
+    
+    &__size, &__additives {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__button {
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    gap: 8px;
+    background-color: $color-khaki;
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__title {
+      color: $color-light;
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+
+    &__title, &__price {
+      @include font-h3;
+    }
+  }
+
+  &__disclaimer {
+    display: flex;
+    gap: 8px;
+    padding: 12px 0;
+    border-top: 1px solid #C1B6AD;
+
+    &__icon {
+      min-width: 16px;
+      height: 16px;
+      background: url('../../../assets/icons/info-empty.svg') center/cover no-repeat;
+    }
+
+    &__text-content {
+      font: 600 10px/1.4 $font-family-inter;
+    }
+  }
+
+  &__close-btn {
+    width: 100%;
+    padding: 10px 0;
   }
 }
