@@ -17,6 +17,29 @@ interface IMenuItem {
 interface IMenu {
   category: string;
   menuItems: IMenuItem[];
+  additionally: IProductAdditionally;
 }
 
-export { INavigationItems, IFooterContacts, IMenuItem, IMenu };
+type ProductSize = {
+  name: string;
+  price: number;
+  volume: string;
+};
+
+type ProductAdditives = {
+  price: number;
+  name: string;
+};
+
+interface IProductAdditionally {
+  size: ProductSize[];
+  additives: ProductAdditives[];
+}
+
+export {
+  INavigationItems,
+  IFooterContacts,
+  IMenuItem,
+  IMenu,
+  IProductAdditionally,
+};

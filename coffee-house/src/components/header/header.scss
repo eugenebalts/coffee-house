@@ -1,10 +1,10 @@
 @import '../../styles/base/variables';
 
 .header {
+  position: relative;
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 100px 1fr;
   }
 
   &__link {

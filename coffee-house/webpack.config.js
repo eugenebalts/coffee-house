@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -23,19 +24,23 @@ module.exports = {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|mp4)$/i,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         // name: '[name].[hash].[ext]',
+      //         limit: 8192,
+      //         // outputPath: '',
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: './src/assets/',
-            },
-          },
-        ],
-      },
-      
+        test: /\.(png|jpe?g|gif|mp4)$/i,
+        type: 'asset/resource'
+      }
     ],
   },
   resolve: {
@@ -56,5 +61,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
+    new CopyPlugin({
+      patterns: [
+          {
+            from: path.resolve(__dirname, 'src/assets'),
+            to:   path.resolve(__dirname, 'dist/assets')
+          }
+        ]
+      })
   ]
 };

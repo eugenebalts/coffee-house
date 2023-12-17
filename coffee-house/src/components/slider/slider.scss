@@ -7,6 +7,10 @@
   gap: 10px;
   width: 100%;
 
+  @include under-tablet {
+    justify-content: center;
+  }
+
   &__navigation {
     width: 60px;
     height: 60px;
@@ -50,21 +54,21 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
+    overflow-x: hidden;
   }
 
   &__cards {
     &-list {
       display: flex;
       width: 480px;
-      overflow-x: hidden;
+      transition: transform 0.3s linear;
 
       @include under-tablet {
-        width: unset;
-        max-width: 480px;
+        width: 348px;
       }
 
       @include mobile {
-        max-width: 348px;
+        width: 348px;
       }
     }
   }
@@ -82,17 +86,17 @@
       border-radius: 100px;
       background-color: #C1B6AD;
 
-      &_active {
-        &:after {
+      // &_active {
+        div {
           position: absolute;
           content: '';
           height: 100%;
           width: 0%;
           background-color: $color-dark;
           border-radius: 100px;
-          animation: indicate 5s linear infinite;
+          // animation: indicate 5s linear infinite;
         }
-      }
+      // }
     }
   }
 }

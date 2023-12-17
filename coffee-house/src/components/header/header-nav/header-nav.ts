@@ -3,12 +3,14 @@ import navigationItems from './navigation-items';
 import Link from '../../link/link';
 import { INavigationItems } from '../../../types/types';
 import './header-nav.scss';
+import headerMenuLink from '../header-menu-link/header-menu-link';
 
 export default class HeaderNav extends BaseComponent<'nav'> {
   constructor() {
     super('nav', ['header__nav']);
 
     this.node.append(this.createMarkup());
+    this.node.append(headerMenuLink);
   }
 
   private createMarkup() {

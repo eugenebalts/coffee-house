@@ -142,6 +142,66 @@
         background-image: url('../../assets/images/menu/coffee/macchiato.svg');
       }
     }
+    &-ginger {
+      &:after {
+        background-image: url('../../assets/images/menu/tea/ginger.svg');
+      }
+    }
+    &-cranberry {
+      &:after {
+        background-image: url('../../assets/images/menu/tea/cranberry.svg');
+      }
+    }
+    &-moroccan {
+      &:after {
+        background-image: url('../../assets/images/menu/tea/moroccan.svg');
+      }
+    }
+    &-buckthorn {
+      &:after {
+        background-image: url('../../assets/images/menu/tea/buckthorn.svg');
+      }
+    }
+    &-marble {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/marble.svg');
+      }
+    }
+    &-velvet {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/velvet.svg');
+      }
+    }
+    &-cheesecakes {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/cheesecakes.svg');
+      }
+    }
+    &-brulee {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/brulee.svg');
+      }
+    }
+    &-pancakes {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/pancakes.svg');
+      }
+    }
+    &-honey-cake {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/honey-cake.svg');
+      }
+    }
+    &-chocolate {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/chocolate.svg');
+      }
+    }
+    &-forest {
+      &:after {
+        background-image: url('../../assets/images/menu/dessert/forest.svg');
+      }
+    }
   }
 
   &__title, &__price {
